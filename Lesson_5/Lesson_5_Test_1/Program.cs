@@ -37,10 +37,11 @@ namespace Lesson_5_Test_1
             Console.WriteLine($"Float:\t{fractionNumber1}");
             Console.WriteLine($"Int:\t{fractionNumber2}");
             Console.WriteLine("\nНажмите клавишу");
+            
             Console.ReadKey();
         }
     }
-    class RationalNumbers
+    class RationalNumbers 
     {
         private int _numerator; //числитель     
         private int _denominator; // знаменатель
@@ -184,7 +185,7 @@ namespace Lesson_5_Test_1
         {
             return number1.Numerator != number2.Numerator || number1.Denominator != number2.Denominator;
         }
-        public bool Equals(RationalNumbers obj)
+       public bool Equals(RationalNumbers obj)
         {
 
             if (this._numerator == obj._numerator && this._denominator == obj._denominator)
@@ -194,19 +195,39 @@ namespace Lesson_5_Test_1
 
             return false;
         }
+       /* public override bool Equals(object obj)
+        {
+            if (obj == null) 
+            { 
+                return false; 
+            }
+            if (obj is not RationalNumbers)
+            {
+                return false;
+            }
+            var number2 = (RationalNumbers)obj;
+            if (this._numerator == number2._numerator && this._denominator == number2._denominator)
+            {
+                return true;
+            }
+
+            return false;
+        }*/
         public override string ToString()
         {
 
             return string.Format($"Дробь : { _numerator} / { _denominator}");
         }
 
-        public static explicit operator float(RationalNumbers number1)
+        public static explicit operator float(RationalNumbers number)
         {
-            return (float)number1.Numerator / number1.Denominator; ;
+            float result = number.Numerator;
+            return result / number.Denominator; 
+
         }
-        public static explicit operator int(RationalNumbers number2)
+        public static explicit operator int(RationalNumbers number)
         {
-            return number2.Numerator / number2.Denominator;
+            return number.Numerator / number.Denominator;
         }
 
     }
