@@ -195,24 +195,29 @@ namespace Lesson_5_Test_1
 
             return false;
         }
-       /* public override bool Equals(object obj)
-        {
-            if (obj == null) 
-            { 
-                return false; 
-            }
-            if (obj is not RationalNumbers)
-            {
-                return false;
-            }
-            var number2 = (RationalNumbers)obj;
-            if (this._numerator == number2._numerator && this._denominator == number2._denominator)
-            {
-                return true;
-            }
+        /* public override bool Equals(object obj)
+         {
+             if (obj == null) 
+             { 
+                 return false; 
+             }
+             if (obj is not RationalNumbers)
+             {
+                 return false;
+             }
+             var number2 = (RationalNumbers)obj;
+             if (this._numerator == number2._numerator && this._denominator == number2._denominator)
+             {
+                 return true;
+             }
 
-            return false;
-        }*/
+             return false;
+         }*/
+        public override int GetHashCode()
+        {
+            return Numerator / Denominator;
+ 
+        }
         public override string ToString()
         {
 
