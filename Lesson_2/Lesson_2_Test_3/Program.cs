@@ -11,6 +11,7 @@ namespace Lesson_2_Test_3
 
             BankAccount newAccount = new BankAccount(Convert.ToInt32(Console.ReadLine())); // создание обьекта через конструктор без поля "банкоский счет"
             //BankAccount newAccount = new BankAccount(Console.ReadLine()); // создание обьекта через конструктор без поля "баланс" (второй вариант)
+            
             int number = newAccount.AccountNumber;
             int account = newAccount.Balance;
 
@@ -53,28 +54,42 @@ namespace Lesson_2_Test_3
         private int _accountNumber;
         private int _balance;
         private string _typeBankAccount;
-                
-        Random newNumber = new Random();
+
+
+        private static int _staticNumber;// статическая переменная
+
+        public void SetAccountNumber() // изменяет статическую переменную
+        {
+            
+            _accountNumber = _staticNumber + 1;
+            _staticNumber = _accountNumber;
+        }
+
+
+       /* Random newNumber = new Random();
         
         public int RandomNumbers() // создает рандомный набор чисел 
         {
             int d = newNumber.Next(1, 1000);
             return d;
-        }
+        }*/
 
         public BankAccount( int balance) // поле баланс
         {
-           _accountNumber = RandomNumbers();
+            //_accountNumber = RandomNumbers();
+            SetAccountNumber();
            _balance = balance;
         }
         public BankAccount( string typeBankAccount)// тип банковского счета
         {
-            _accountNumber = RandomNumbers();
+            // _accountNumber = RandomNumbers();
+            SetAccountNumber();
             _typeBankAccount = typeBankAccount;
         }
         public BankAccount(int balace, string typeBankAccount)// тип багнковского счета, поле баланс
         {
-            _accountNumber = RandomNumbers();
+            //_accountNumber = RandomNumbers();
+            SetAccountNumber();
             _balance = balace;
             _typeBankAccount = typeBankAccount;
         }

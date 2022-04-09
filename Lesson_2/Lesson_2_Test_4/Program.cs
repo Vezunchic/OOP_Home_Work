@@ -52,26 +52,12 @@ namespace Lesson_2_Test_4
     }
     public class BankAccount
     {
-        private int _accountNumber;
-        private int _balance;
-        private string _typeBankAccount;
+        public int AccountNumber { get; set; }
 
-        public int AccountNumber
-        {
-            get { return _accountNumber; }
-            set { _accountNumber = value; }
-        }
-        public int Balance
-        {
-            get { return _balance; }
-            set { _balance = value; }
+        public int Balance { get; set; }
 
-        }
-        public string TypeBankAccount
-        {
-            get { return _typeBankAccount; }
-            set { _typeBankAccount = value; }
-        }
+        public string TypeBankAccount { get; set; }
+
     }
     enum TypeAccount
     {

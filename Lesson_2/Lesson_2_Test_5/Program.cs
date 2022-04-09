@@ -83,6 +83,7 @@ namespace Lesson_2_Test_5
         {
             if (amount > _balance)
             {
+                Console.WriteLine("Не хватает денежных средств");
                 return;
             }
             _balance = _balance - amount;
