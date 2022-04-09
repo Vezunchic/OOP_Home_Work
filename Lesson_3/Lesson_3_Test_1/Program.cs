@@ -42,11 +42,11 @@ namespace Lesson_2_Test_5
             Console.WriteLine($"Текущее значение счета \n Номер счета: {newAccount.AccountNumber} Баланс: {newAccount.Balance} Тип банковского счета: {bank} ");
             Console.WriteLine();
 
-           // Console.WriteLine("Какую сумму хотите снять?");
-           // newAccount.WithdrawBalance(Convert.ToInt32(Console.ReadLine()));
-           // Console.WriteLine($"Текущее значение счета \n Номер счета: {number} Баланс: {newAccount.Balance} Тип банковского счета: {bank} ");
-           // Console.WriteLine("Какую сумму хотите добавить?");
-           // newAccount.PutBalance(Convert.ToInt32(Console.ReadLine()));
+            Console.WriteLine("Какую сумму хотите снять?");
+           newAccount.WithdrawBalance(Convert.ToInt32(Console.ReadLine()));
+            Console.WriteLine($"Текущее значение счета \n Номер счета: {newAccount.AccountNumber} Баланс: {newAccount.Balance} Тип банковского счета: {bank} ");
+           Console.WriteLine("Какую сумму хотите добавить?");
+            newAccount.PutBalance(Convert.ToInt32(Console.ReadLine()));
 
 
             Console.WriteLine("Какую сумму хотите перевести?");
@@ -115,7 +115,7 @@ namespace Lesson_2_Test_5
             set { _typeBankAccount = value; }
         }
 
-      /*  public void WithdrawBalance(int amount) // Снять со счета
+       public void WithdrawBalance(int amount) // Снять со счета
         {
             if (amount > _balance)
             {
@@ -126,7 +126,7 @@ namespace Lesson_2_Test_5
         public void PutBalance(int amount) // Положить на счет
         {
             _balance = _balance + amount;
-        }*/
+        }
         public void Translation (int sum, BankAccount newAccount) // Перевод со счета на счет
         {
             if (sum > newAccount._balance)

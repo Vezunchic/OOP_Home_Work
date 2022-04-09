@@ -8,22 +8,28 @@ namespace Lesson_3_Test_2
         {
             Console.WriteLine("Введите строку");
             string line = Console.ReadLine();
-            LineFeed(line);
-           
-        }
-
-        private static void LineFeed(string line)
-        {
-            char[] coupLine = line.ToCharArray();
-            for (int symbol = coupLine.Length - 1; symbol >= 0; symbol--)
-            {
-                Console.Write(coupLine[symbol]);
-            }
-            Console.WriteLine();
+            string coupLine = CoupLine(line);
+            Console.WriteLine(coupLine);
             Console.WriteLine("Нажмите клавишу");
             Console.ReadKey();
         }
 
-       
+        private static string CoupLine(string line)
+        {
+            char[] coupLine = line.ToCharArray();
+            string newCoupLine = "";
+
+            for (int symbol = coupLine.Length - 1; symbol >= 0; symbol--)
+            {
+                newCoupLine += coupLine[symbol].ToString();
+            }
+
+            Console.WriteLine();
+            return newCoupLine;
+
+
+        }
+
+
     }
 }
